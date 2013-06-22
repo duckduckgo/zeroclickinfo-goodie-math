@@ -4,7 +4,6 @@ package DDG::Goodie::Math;
 use DDG::Goodie;
 use HTML::Entities;
 
-#triggers startend => 'latex', 'tex', 'mathml', 'math', 'equation';
 triggers query_nowhitespace => qr/^\$.*\$$/, qr/^\$\$.*\$\$$/,
                                qr/^\\begin{math}.*\\end{math}$/,
                                qr/^\\begin{displaymath}.*\\end{displaymath}$/,
@@ -29,7 +28,9 @@ handle query_raw => sub {
                 </script><script type="text/javascript">
                 MathJax.Hub.Config({
                   tex2jax: {
-                    skipTags: ["script","noscript","style","textarea","pre","code","body","head"],
+                    inlineMath: [["$","$"],["\\(","\\)"]],
+                    processEnvironments: true,
+                    skipTags: ["script","noscript","style","textarea","pre","code","span","head"],
                     processClass: "math"
                   }
                 });
