@@ -15,8 +15,6 @@ ddg_goodie_test(
 	)],
 	'$\sum_{i=0}^{N} x_i$' => test_zci('', html => qr|<span class="math">\$\\sum_{i=0}\^{N} x_i\$</span>|),
 	'$$\sum_{i=0}^{N} x_i$$' => test_zci('', html => qr|<span class="math">\$\$\\sum_{i=0}\^{N} x_i\$\$</span>|),
-	'\begin{math}\sum_{i=0}^{N} x_i\end{math}' => test_zci('', html => qr|<span class="math">\\begin{math}\\sum_{i=0}\^{N} x_i\\end{math}</span>|),
-	'\begin{displaymath}\sum_{i=0}^{N} x_i\end{displaymath}' => test_zci('', html => qr|<span class="math">\\begin{displaymath}\\sum_{i=0}\^{N} x_i\\end{displaymath}</span>|),
 	'\(\sum_{i=0}^{N} x_i\)' => test_zci('', html => qr|<span class="math">\\\(\\sum_{i=0}\^{N} x_i\\\)</span>|),
 	'\[\sum_{i=0}^{N} x_i\]' => test_zci('', html => qr|<span class="math">\\\[\\sum_{i=0}\^{N} x_i\\\]</span>|),
 );
